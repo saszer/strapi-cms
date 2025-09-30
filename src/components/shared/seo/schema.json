@@ -1,0 +1,41 @@
+export default {
+  collectionName: 'components_shared_seo',
+  info: {
+    displayName: 'SEO',
+    description: 'SEO metadata for content',
+  },
+  options: {
+    draftAndPublish: false,
+  },
+  pluginOptions: {
+    i18n: {
+      localized: true,
+    },
+  },
+  attributes: {
+    metaTitle: {
+      type: 'string',
+      maxLength: 60,
+    },
+    metaDescription: {
+      type: 'text',
+      maxLength: 160,
+    },
+    keywords: {
+      type: 'text',
+    },
+    canonicalUrl: {
+      type: 'string',
+    },
+    ogImage: {
+      type: 'media',
+      multiple: false,
+      allowedTypes: ['images'],
+    },
+    twitterCard: {
+      type: 'enumeration',
+      enum: ['summary', 'summary_large_image'],
+      default: 'summary',
+    },
+  },
+};

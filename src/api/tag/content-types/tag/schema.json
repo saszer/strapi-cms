@@ -1,0 +1,41 @@
+export default {
+  kind: 'collectionType',
+  collectionName: 'tags',
+  info: {
+    singularName: 'tag',
+    pluralName: 'tags',
+    displayName: 'Tag',
+    description: 'Blog tags',
+  },
+  options: {
+    draftAndPublish: false,
+  },
+  pluginOptions: {
+    i18n: {
+      localized: true,
+    },
+  },
+  attributes: {
+    name: {
+      type: 'string',
+      required: true,
+      maxLength: 50,
+    },
+    slug: {
+      type: 'uid',
+      targetField: 'name',
+      required: true,
+    },
+    color: {
+      type: 'string',
+      maxLength: 7,
+      regex: '^#[0-9A-Fa-f]{6}$',
+    },
+    articles: {
+      type: 'relation',
+      relation: 'manyToMany',
+      target: 'api::article.article',
+      mappedBy: 'tags',
+    },
+  },
+};

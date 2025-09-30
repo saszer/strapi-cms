@@ -1,0 +1,33 @@
+export default {
+  collectionName: 'components_shared_social_media',
+  info: {
+    displayName: 'Social Media',
+    description: 'Social media links',
+  },
+  options: {
+    draftAndPublish: false,
+  },
+  pluginOptions: {
+    i18n: {
+      localized: true,
+    },
+  },
+  attributes: {
+    twitter: {
+      type: 'string',
+      regex: '^@[a-zA-Z0-9_]+$',
+    },
+    linkedin: {
+      type: 'string',
+      regex: '^https://linkedin\\.com/in/[a-zA-Z0-9-]+/?$',
+    },
+    github: {
+      type: 'string',
+      regex: '^https://github\\.com/[a-zA-Z0-9-]+/?$',
+    },
+    website: {
+      type: 'string',
+      regex: '^https?://.+',
+    },
+  },
+};

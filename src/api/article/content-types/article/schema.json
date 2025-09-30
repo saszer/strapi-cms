@@ -1,0 +1,71 @@
+export default {
+  kind: 'collectionType',
+  collectionName: 'articles',
+  info: {
+    singularName: 'article',
+    pluralName: 'articles',
+    displayName: 'Article',
+    description: 'Blog articles',
+  },
+  options: {
+    draftAndPublish: true,
+  },
+  pluginOptions: {
+    i18n: {
+      localized: true,
+    },
+  },
+  attributes: {
+    title: {
+      type: 'string',
+      required: true,
+      maxLength: 255,
+    },
+    slug: {
+      type: 'uid',
+      targetField: 'title',
+      required: true,
+    },
+    excerpt: {
+      type: 'text',
+      maxLength: 500,
+    },
+    content: {
+      type: 'richtext',
+      required: true,
+    },
+    featuredImage: {
+      type: 'media',
+      multiple: false,
+      allowedTypes: ['images'],
+    },
+    author: {
+      type: 'relation',
+      relation: 'manyToOne',
+      target: 'api::author.author',
+      required: true,
+    },
+    category: {
+      type: 'relation',
+      relation: 'manyToOne',
+      target: 'api::category.category',
+    },
+    tags: {
+      type: 'relation',
+      relation: 'manyToMany',
+      target: 'api::tag.tag',
+    },
+    seo: {
+      type: 'component',
+      repeatable: false,
+      component: 'shared.seo',
+    },
+    readingTime: {
+      type: 'integer',
+      min: 1,
+    },
+    publishedAt: {
+      type: 'datetime',
+    },
+  },
+};

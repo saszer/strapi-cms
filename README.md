@@ -45,3 +45,4 @@ The CMS includes:
 - Public API: `/api/blog-posts`, `/api/authors`, `/api/categories`, `/api/tags`
 - Admin Panel: `/admin`
 - API Documentation: `/documentation`
+
