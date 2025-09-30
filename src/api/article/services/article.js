@@ -29,3 +29,4 @@ module.exports = createCoreService('api::article.article', ({ strapi }) => ({
     return relatedArticles;
   },
 }));
+

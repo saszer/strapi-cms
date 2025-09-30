@@ -35,3 +35,4 @@ module.exports = createCoreController('api::article.article', ({ strapi }) => ({
     return { data, meta };
   },
 }));
+

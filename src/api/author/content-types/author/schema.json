@@ -1,50 +1,58 @@
-export default {
-  kind: 'collectionType',
-  collectionName: 'authors',
-  info: {
-    singularName: 'author',
-    pluralName: 'authors',
-    displayName: 'Author',
-    description: 'Blog post authors',
+{
+  "kind": "collectionType",
+  "collectionName": "authors",
+  "info": {
+    "singularName": "author",
+    "pluralName": "authors",
+    "displayName": "Author",
+    "description": "Blog post authors"
   },
-  options: {
-    draftAndPublish: false,
+  "options": {
+    "draftAndPublish": false
   },
-  pluginOptions: {
-    i18n: {
-      localized: true,
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
     },
-  },
-  attributes: {
-    name: {
-      type: 'string',
-      required: true,
-      maxLength: 255,
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
     },
-    email: {
-      type: 'email',
-      required: true,
-      unique: true,
+    "bio": {
+      "type": "text",
+      "maxLength": 1000
     },
-    bio: {
-      type: 'text',
-      maxLength: 1000,
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
     },
-    avatar: {
-      type: 'media',
-      multiple: false,
-      allowedTypes: ['images'],
+    "twitter": {
+      "type": "string",
+      "maxLength": 255
     },
-    social: {
-      type: 'component',
-      repeatable: false,
-      component: 'shared.social-media',
+    "linkedin": {
+      "type": "string",
+      "maxLength": 255
     },
-    articles: {
-      type: 'relation',
-      relation: 'oneToMany',
-      target: 'api::article.article',
-      mappedBy: 'author',
+    "github": {
+      "type": "string",
+      "maxLength": 255
     },
-  },
-};
+    "website": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article",
+      "mappedBy": "author"
+    }
+  }
+}
