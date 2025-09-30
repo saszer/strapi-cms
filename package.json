@@ -1,0 +1,30 @@
+{
+  "name": "ai2fin-cms",
+  "private": true,
+  "version": "0.1.0",
+  "description": "AI2Fin Strapi CMS",
+  "scripts": {
+    "build": "strapi build",
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "strapi": "strapi"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@strapi/strapi": "4.25.5",
+    "@strapi/plugin-users-permissions": "4.25.5",
+    "@strapi/plugin-i18n": "4.25.5",
+    "pg": "8.11.3"
+  },
+  "author": {
+    "name": "AI2Fin Team"
+  },
+  "strapi": {
+    "uuid": "ai2fin-cms-uuid"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
